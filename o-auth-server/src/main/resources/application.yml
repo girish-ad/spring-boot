@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: o-auth-server
+  security:
+    oauth2:
+      authorizationserver:
+        issuer: http://localhost:9000
+      client:
+        registration:
+            client-id: client1
+            client-secret: secret1
+            client-name: Client 1
+            client-authentication-method: client_secret_basic
+            scope: read,write, openid
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/client1
+
+server:
+    port: 9000
